@@ -1,5 +1,8 @@
 import { svg as svgCfg, report as repCfg, reportLines as rlCfg } from '../config/index.js';
 
+import { bisRed, bisGreen, bisOrange, bisBlue } from "../bis-colors.js";
+
+
 export const drawReport = (snap) => {
 
     const rect = snap.rect(repCfg.x, repCfg.y + 80, repCfg.width, repCfg.height);
@@ -15,10 +18,12 @@ export const drawReport = (snap) => {
 
     const group = snap.g(rect, lines[0], lines[1], lines[2]);
     group.attr({
-        stroke: 'darkorange',
-        "stroke-width": 3,
+        stroke: bisOrange,
         style: 'display:none'
     });
+    group.attr({
+        "stroke-width": 3
+    })
 
     return group;
 };

@@ -1,5 +1,8 @@
 import { svg as svgCfg, getBrSrvRect as rectCfg, getBrSrvRectText as textCfg } from '../config/index.js';
 
+import { bisRed, bisGreen, bisOrange, bisBlue } from "../bis-colors.js";
+
+
 const num = 0;
 
 export const drawGet = (snap) => {
@@ -7,7 +10,7 @@ export const drawGet = (snap) => {
     getRect.attr({
         rx: 4,
         ry: 4,
-        stroke: 'silver',
+        stroke: bisGreen,
         fill: 'white',
         "stroke-width": 3
     });
@@ -15,14 +18,14 @@ export const drawGet = (snap) => {
     const txt1 = snap.text(rectCfg.x + 5, rectCfg.y + 15, 'GET / HTTP/1.1');
 
     txt1.attr({
-        fill: 'darkblue',
+        fill: bisGreen,
         'style': `font-size: 12px`
     });
 
     const txt2 = snap.text(rectCfg.x + 5, rectCfg.y + 15, 'Host: me.com');
     txt2.attr({
         dy: '18px',
-        fill: 'darkblue',
+        fill: bisGreen,
         'style': `font-size: 12px;`
     });
 

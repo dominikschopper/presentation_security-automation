@@ -1,4 +1,12 @@
-import { browserServerArrow as brsSrvcfg, browserZapArrow as brsZapCfg, zapServerArrow as zapSrvCfg } from '../config/index.js';
+import { 
+    browserServerArrow as brsSrvcfg, 
+    browserZapArrow as brsZapCfg, 
+    zapServerArrow as zapSrvCfg,
+    zapToReportArrow as zRepCfg
+} from '../config/index.js';
+
+import { bisRed, bisGreen, bisOrange, bisBlue } from "../bis-colors.js";
+
 
 export const drawArrow = (snap) => {
     const browserServer = snap.path(`
@@ -12,7 +20,7 @@ export const drawArrow = (snap) => {
         id: 'client-to-server',
         fill: 'transparent',
         class: 'anim-line',
-        stroke: 'blue',
+        stroke: bisGreen,
         "stroke-width": 4
     });
 
@@ -27,7 +35,7 @@ export const drawArrow = (snap) => {
         id: 'server-to-client',
         class: 'anim-line',
         fill: 'transparent',
-        stroke: 'lightblue',
+        stroke: bisBlue,
         "stroke-width": 4
     });
 
@@ -42,7 +50,7 @@ export const drawArrow = (snap) => {
         id: 'client-to-zap',
         class: 'anim-line',
         fill: 'transparent',
-        stroke: 'blue',
+        stroke: bisGreen,
         "stroke-width": 4
     });
 
@@ -57,7 +65,7 @@ export const drawArrow = (snap) => {
         id: 'zap-to-server',
         class: 'anim-line',
         fill: 'transparent',
-        stroke: 'blue',
+        stroke: bisRed,
         "stroke-width": 4
     });
 
@@ -73,7 +81,7 @@ export const drawArrow = (snap) => {
         id: 'server-to-zap',
         class: 'anim-line',
         fill: 'transparent',
-        stroke: 'lightblue',
+        stroke: bisBlue,
         "stroke-width": 4
     });
 
@@ -89,9 +97,17 @@ export const drawArrow = (snap) => {
         id: 'zap-to-browser',
         class: 'anim-line',
         fill: 'transparent',
-        stroke: 'lightblue',
+        stroke: bisRed,
         "stroke-width": 4
     });
+
+    const zapReportArrow = snap.line(zRepCfg.x1, zRepCfg.y1, zRepCfg.x2, zRepCfg.y2);
+    zapReportArrow.attr({
+        stroke: bisOrange,
+        style: 'display:none',
+        id: 'zap-report-arrow'
+    });
+    zapReportArrow.attr({"stroke-width": 8});
 
     return [browserServer, serverBrowser, browserZap, zapServer];
 };

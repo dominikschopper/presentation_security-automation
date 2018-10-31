@@ -1,3 +1,9 @@
+
+const  cRed = '#d53868';
+const  cOrange = '#d59e38';
+const  cGreen = '#329e98';
+const cBlue = '#32689e';
+
 export const svg = {
     height: 600,
     width: 800,
@@ -60,6 +66,14 @@ export const reportLines = [
     { x1: lineStart, y1: report.y + 122, x2: report.x + lineLength },
     { x1: lineStart, y1: report.y + 134, x2: report.x + lineLength }
 ];
+
+
+export const zapToReportArrow = {
+    x1: report.x + report.width / 2,
+    y1: report.y + report.height,
+    x2: report.x + report.width / 2,
+    y2: report.y + report.height + 120
+}
 
 export const browserServerArrow = {
     start:  { x: (browser.width/2 + svg.border), y: (svg.border + browser.height + 15) },

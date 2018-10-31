@@ -4,15 +4,18 @@ import {
     zapText as textCfg
 } from '../config/index.js';
 
+import { bisRed, bisGreen, bisOrange, bisBlue } from "../bis-colors.js";
+
+
 export const drawZap = (snap) => {
     const zapRect = snap.rect(zapCfg.x, zapCfg.y, zapCfg.width, zapCfg.height);
     zapRect.attr({
         id: 'zap-rect',
         rx: 4,
         ry: 4,
-        stroke: 'red',
-        fill: 'white',
-        style: 'stroke-width:9px;'
+        stroke: bisRed,
+        fill: 'rgba(213, 56, 104, 0.33333)',
+        style: 'stroke-width:4px;'
     });
 
     const txt = snap.text(textCfg.x, textCfg.y, 'ZAP');
