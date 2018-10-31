@@ -1,0 +1,646 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Security Automation</title>
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/simple.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+	<style>
+		html,
+		body,
+		html body {
+			font-family: 'Roboto', Helvetica, Arial, Verdana, sans-serif;
+		}
+
+		ul > li {
+			list-style-type: square;
+		}
+		ul > li li {
+			list-style-type: disc;
+		}
+
+		html body .reveal section * {
+			font-family: 'Roboto', Helvetica, Arial, Verdana, sans-serif;
+		}
+
+		.reveal .chapter h1 {
+			color: #329e98;
+		}
+
+		.reveal .hl-red {
+			color: #d53868;
+		}
+
+		.reveal .hl-orange {
+			color: #d59e38;
+		}
+		.reveal .hl-green {
+			color: #329e98;
+		}
+
+		
+
+		#anim-step {
+			font-size: 1.25rem;
+			padding: 0.75rem 2rem;
+			background: transparent;
+			border: 1px solid silver;
+		}
+
+		body .reveal.center,
+		body .reveal.center .slides,
+		body .reveal.center .slides section {
+			box-sizing: border-box;
+		}
+
+		.reveal section blockquote,
+		.reveal section p {
+			text-align: left;
+		}
+
+		.reveal h1,
+		.reveal h2,
+		.reveal h3,
+		.reveal h4 {
+			margin: 0.5em 0 0.25em;
+			color: #d53868;
+		}
+
+		.reveal .footnote {
+			font-size: 0.75em;
+			text-align: right;
+		}
+		.anim-line {
+			visibility: hidden;
+		}
+		.dash-to-server {
+			stroke-dasharray: 1000;
+			stroke-dashoffset: 1000;
+			animation: dash 1s linear forwards;
+		}
+		.dash-from-server {
+			stroke-dasharray: 1000;
+			stroke-dashoffset: 1000;
+			animation: dash 1s linear forwards;
+		}
+
+		.ws-path1{
+			opacity: 0;
+			animation: letter 1s linear forwards;
+			animation-delay: 0.5s;
+		}
+
+		@keyframes dash {
+			to {
+				stroke-dashoffset: 0;
+			}
+		}
+
+		ul.anim-list {
+			display: block; margin: 0 auto; padding: 0; width: 16rem; list-style-type: none;
+		}
+		.reveal .slides section ul.anim-list li.fragment {
+			display: inline-block;
+			list-style-type: none;
+			width: 1rem; height: 1rem;
+			border: 1px solid silver;
+			border-radius: 0.5rem;
+			padding: 0;
+			margin: 0;
+			visibility: visible;
+			opacity: 1;
+		}
+		.reveal .slides section ul.anim-list li.fragment.current-fragment { 
+			background-color: #828282;
+			border: 1px solid #828282;
+		}
+	</style>
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+
+			<section id="title" class="chapter">
+				<h1>security automation</h1>
+				<h4>our journey into the dark woods of security</h4>
+			</section>
+
+			<section>
+				<!-- SLIDE GROUP: intro /  me / my company -->
+
+				<!-- SLIDE: topic intro -->
+				<section id="slide-02">
+					<h4>first encounters of the strange kind</h4>
+
+					<blockquote style="font-size:1.75rem;">
+						100% of web applications tested,
+						displayed at least one vulnerability [...]
+						<legend>
+							<a target="_blank" href="https://www.trustwave.com/Resources/Security-Stats/">Trustwave Inc.</a>
+						</legend>
+					</blockquote>
+
+					<blockquote style="font-size:1.75rem;">
+						43 percent of [...] attacks are aimed at
+						small businesses
+						<legend>
+							<a target="_blank" href="https://thebestvpn.com/cyber-security-statistics-2018/">thebestvpn.com</a>
+						</legend>
+					</blockquote>
+
+					<blockquote style="font-size: 1.75rem;">
+						191 days: The average length of time it takes for organizations to identify a data breach
+						<legend>
+							<a target="_blank" href="https://www-01.ibm.com/common/ssi/cgi-bin/ssialias?htmlfid=SEL03130WWEN&">
+								Cost of Data Breach Study from 2017</a>
+						</legend>
+					</blockquote>
+
+					<aside class="notes" data-markdown="">
+						- my first webserver in 2001, five small mostly overlooked websites (100vis/day a lot!)
+						- I setup logwatch ... => X portsvcans/ssh login attempts/... every day
+						- a colleague of mine attached his pc via DSL had a network sniffer attached => portscan within 5min
+						- script kiddies/hackers/... everywhere
+					</aside>
+				</section>
+
+				<section id="slide-01">
+
+					<h3>Disclaimer</h3>
+
+					<div style="display:flex;">
+						<ul style="width:800px">
+							<li>studied Pol. Scie</li>
+							<li>got trained to be a linux admin</li>
+							<li>learned to be a frontend developer</li>
+							<li>now team lead frontend for <a href="https://www.bisnode.de/">Bisnode Germany</a></li>
+						</ul>
+
+						<img src="images/dschopper.jpg" style="width: 240px;margin-left: 2rem;height: 251px;" />
+					</div>
+
+					<aside class="notes" data-markdown="">
+						- i am talking about security - i am not a security export
+						- but i believe that: **security is too important ot leave it to experts only**
+						- how we (as dev.s/admins/devops) can have checks to avoid the obvious mistakes
+					</aside>
+				</section>
+
+				<section>
+
+					<h3>The Company I work for</h3>
+					<h4>Bisnode Deutschland</h4>
+
+					<ul>
+						<li>part of the Bisnode Group (in near20 countries in Europe)</li>
+						<li>selling data: marketing/risk/...</li>
+						<li>been on the market for a long before the internet</li>
+						<li>thus we are in the process of a total digital transformation</li>
+					</ul>
+
+					<aside class="notes" data-markdown="">
+						- bisnode: data driven company
+						- development teams all over europe
+						- security needs to be focussed
+						- stronger IT since 10yrs (microservices, docker, ...)
+					</aside>
+				</section>
+
+				<section id="slide-03">
+
+					<h3>security perspective</h3>
+					<ul>
+						<li>security should be &quot;in our nature&quot;</li>
+						<li>
+							making security part of the SDLC<sup>*</sup>
+
+							<ul>
+								<li class="fragment">Awareness and Training (OWASP, PenTesting, ...)</li>
+								<li class="fragment">Static Code analysis</li>
+								<li class="fragment">Code Reviews (specifically have that focus)</li>
+								<li class="fragment">Find bugs/security holes asap, automatically</li>
+							</ul>
+						</li>
+					</ul>
+					<div style="font-size:0.5em; text-align: left">
+						<sup>*</sup>Software Development Lifecycle
+					</div>
+
+					<aside class="notes" data-markdown="">
+
+					</aside>
+
+				</section>
+
+
+			</section>
+
+			<section>
+
+				<section id="slide-04">
+					<h3>Plenty of possibilities</h3>
+
+					<ul>
+						<li>buying services with lots of human support <span class="fragment hl-red">expensive</span> </li>
+						<li>buying services without human support <span class="fragment hl-orange">less expensive</span></li>
+						<li>doing it on our own <span class="fragment hl-green">&quotonly&quot; developer time</span></li>
+					</ul>
+
+					<aside class="notes" data-markdown>
+						- contracting external security companies with consultants
+						- buying scanning services
+						- get our own experience
+					</aside>
+				</section>
+
+				<section id="slide-05" data-markdown="">
+					### What we did
+					- using OWASPs Zed Attack Proxy (aka ZAP &rarr; open source)
+					- creating selenium tests
+					- let it run
+				</section>
+
+				<aside class="notes" data-markdown="">
+					- ZAP is free of Cost
+					- has a rest API to remote control
+					- well supported by a community (plugins, ...)
+					- even comes with docker image...
+				</aside>
+
+				<section id="slide-06">
+					<h3>how does it work?</h3>
+					<!-- button id="anim-step">next</button -->
+					<div>
+						<svg id="zap-aninmation" style="background-color:white;border: 1px solid silver" height="600" width="800"></svg>
+
+						<ul class="anim-list">
+							<li data-id="0" class="fragment"></li>
+							<li data-id="0" class="fragment"></li>
+							<li data-id="1" class="fragment"></li>
+							<li data-id="2" class="fragment"></li>
+							<li data-id="3" class="fragment"></li>
+							<li data-id="4" class="fragment"></li>
+							<li data-id="5" class="fragment"></li>
+							<li data-id="6" class="fragment"></li>
+							<li data-id="7" class="fragment"></li>
+						</ul>
+
+					</div>
+				</section>
+
+			</section>
+
+			<script src="node_modules/snapsvg/dist/snap.svg-min.js"></script>
+			<script type="module" src="/js/svg-animations/src/index.js"></script>
+
+			<section>
+				<section id="slide-07" data-markdown="">
+					### show ZAP in docker
+				</section>
+
+				<section id="slide-08" data-markdown>
+					### questions
+				</section>
+
+				<section class="chapter" id="slide-09" data-markdown>
+					# thank you
+				</section>
+			</section>
+
+		</div>
+	</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			width: 1124,
+			height: 820,
+
+			controlsTutorial: false,
+			controlsLayout: 'edges',
+			slideNumber: true,
+			// parallaxBackgroundImage: "https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg",
+			history: true,
+			loop: false,
+			help: false, // false => for presentation
+			showNotes: false, // false => for presentation
+			transition: 'concave',
+			dependencies: [{
+					src: 'plugin/markdown/marked.js'
+				},
+				{
+					src: 'plugin/markdown/markdown.js'
+				},
+				{
+					src: 'plugin/notes/notes.js',
+					async: true
+				},
+				{
+					src: 'plugin/highlight/highlight.js',
+					async: true,
+					callback: function () {
+						hljs.initHighlightingOnLoad();
+					}
+				}
+			]
+		});
+	</script>
+	<script>
+		const animateZapIcon = (zapIcon) => {
+			zapIcon.attr({
+				transform: ''
+			});
+			zapIcon.attr({
+				style: 'display:initial'
+			});
+			zapIcon.animate({
+				transform: 'skewY(5) skewY(2) translate(0, -50)'
+			}, 150, () => {
+				zapIcon.attr({
+					transform: ''
+				});
+				zapIcon.animate({
+					transform: 'skewY(3) skewY(5) translate(0, -55)'
+				}, 150, () => {
+					zapIcon.attr({
+						transform: ''
+					});
+					zapIcon.animate({
+						transform: 'skewY(5) skewY(2) translate(0, -50)'
+					}, 150, () => {
+						zapIcon.attr({
+							transform: ''
+						});
+						zapIcon.animate({
+							transform: 'skewY(3) skewY(5) translate(0, -55)'
+						}, 150, () => {
+							zapIcon.attr({
+								transform: ''
+							});
+							zapIcon.animate({
+								transform: 'skewY(5) skewY(2) translate(0, -50)'
+							}, 150, () => {});
+						});
+					});
+				});
+			})
+		};
+
+		const animationFlow = [
+			{
+				id: 'show browser and server',
+				elementIds: ['svg-server', 'svg-browser'],
+				tasks: [
+					(srv, brs) => {
+						svgBrowser.attr({style:'display:inherit'});
+						svgServer.attr({style:'display:inherit'});
+					}
+				]
+			},
+			{
+				id: 'show client server line',
+				elementIds: ['client-to-server'],
+				tasks: [
+					(el) => {
+						getReq1.attr({
+							'style': 'display:inherit'
+						});
+						setTimeout(() => {
+							el.style.visibility = 'visible';
+							el.classList.add('dash-to-server');
+							getReq1.animate({
+								transform: 'translate(520, 50)'
+							}, 1000);
+						}, 1000);
+
+					}
+				]
+			},
+			{
+				id: 'show server client line',
+				elementIds: ['server-to-client'],
+				tasks: [
+					(el) => {
+						// hiding req
+						getReq1.attr({
+								style: 'display:none'
+							})
+							.attr({
+								transform: ''
+							})
+
+						// showing line and server response
+						getAnsw1.attr({
+							'style': 'display:inherit'
+						});
+
+						setTimeout(() => {
+							el.style.visibility = 'visible';
+							el.classList.add('dash-from-server');
+							getAnsw1.animate({
+								transform: 'translate(-615, -80)'
+							}, 1000);
+						}, 1000);
+					}
+				]
+			},
+			{
+				id: 'hide both lines line and show zap',
+				elementIds: ['server-to-client', 'client-to-server', 'zap-group'],
+				tasks: [
+					(brsSrv, srvBrs, zapGr) => {
+						// hiding answer
+						getAnsw1.attr({
+								style: 'display:none'
+							})
+							.attr({
+								transform: ''
+							});
+
+						// hide lines
+						brsSrv.style.visibility = 'hidden';
+						srvBrs.style.visibility = 'hidden';
+						getAnsw1.attr({
+							'style': 'display:none'
+						});
+						zapGr.style.display = 'inherit';
+					}
+				]
+			},
+			{
+				id: 'show client zap line',
+				elementIds: ['client-to-zap', 'zap-icon'],
+				tasks: [
+					(zap2brs, zIcon) => {
+						zap2brs.style.visibility = 'visible';
+						zap2brs.classList.add('dash-to-server');
+
+						getReq1.attr({
+							'style': 'display:inherit'
+						});
+						getReq1.animate({
+							transform: 'translate(195, 0)'
+						}, 1000, () => {
+							animateZapIcon(zapIcon);
+						});
+
+					}
+				]
+			},
+			{
+				id: 'show zap server line',
+				elementIds: ['zap-to-server'],
+				tasks: [
+					(zapsrv) => {
+
+						zapsrv.style.visibility = 'visible';
+						getReq2.attr({
+							'style': 'display:inherit',
+							transform: 'translate(300, 10)'
+						});
+
+						setTimeout(() => {
+							zapsrv.classList.add('dash-from-server');
+							getReq2.animate({
+								transform: 'translate(505, 55)'
+							}, 1000);
+						}, 200);
+					}
+				]
+			},
+			{
+				id: 'show server to zap line',
+				elementIds: ['server-to-zap', 'zap-to-server'],
+				tasks: [
+					(zapBrs, zapSrv) => {
+						console.log('getAnsw2', getAnsw2);
+
+						setTimeout(() => {
+							getReq2.attr({ style: 'display:none' });
+						}, 125);
+
+						getAnsw2.attr({
+							'style': 'display:inherit',
+							transform: ''
+						});
+
+						zapBrs.style.visibility = 'visible';
+						zapBrs.classList.add('dash-from-server');
+						getAnsw2.animate({
+							transform: 'translate(-290, -80)'
+						}, 1000, () => {
+							animateZapIcon(zapIcon);
+						});
+					}
+				]
+			},
+			{
+				id: 'show zap to browser line',
+				elementIds: ['zap-to-browser'],
+				tasks: [
+					(zapBrs) => {
+						getReq1.attr({style: 'display:none'});
+						getAnsw3.attr({
+							transform: 'translate(-330, -80)',
+							style: 'display:inherit'
+						});
+
+						getAnsw3.animate({
+							transform: 'translate(-580, -80)'
+						}, 1000);
+						zapBrs.style.visibility = 'visible';
+						zapBrs.classList.add('dash-from-server');
+					}
+				]
+			},
+			{
+				id: 'retrieve report',
+				elementIds: ['zap-to-browser'],
+				tasks: [
+					(zapBrs) => {
+						svgReport.attr({
+							transform: 'scale(0.25 0.25) translate(1300 400)',
+							style: 'display:inherit'
+						});
+						animateZapIcon(zapIcon);
+						svgReport.animate({
+							transform: 'translate(0 0) scale(1 1)'
+						}, 300, () => {
+							svgReport.animate({
+								transform: 'translate(0 120)'
+							}, 750)
+						})
+					}
+				]
+			}
+		];
+
+
+
+		let stepNo = -1;
+
+		const animateSvgHandler = (ev) => {
+
+			console.log('ev.fragment', ev.fragment.dataset.fragmentIndex);
+
+			stepNo = ev.fragment.dataset.fragmentIndex;
+			const cfg = animationFlow[stepNo];
+
+			if (stepNo >= animationFlow.length || stepNo < 0) {
+				return;
+			}
+
+			// showing animation title in console
+			console.log('SVG animation', cfg.id);
+
+			const elements = cfg.elementIds.map((id) => {
+				return document.getElementById(id);
+			});
+
+			cfg.tasks.forEach((cb) => {
+				cb(...elements);
+			});
+		};
+
+		Reveal.addEventListener('slidechanged', function (event) {
+			// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+			current = parseInt(event.currentSlide.id.split('-')[1]);
+			console.log('slide changed', current, event.currentSlide);
+			if (event.currentSlide.id === 'slide-06') {
+				console.log('adding fragment event')
+				Reveal.addEventListener('fragmentshown', animateSvgHandler);
+			} else {
+				console.log('removing fragment event')
+				Reveal.removeEventListener('fragmentshown', animateSvgHandler)
+			}
+		});
+	</script>
+
+</body>
+
+</html>

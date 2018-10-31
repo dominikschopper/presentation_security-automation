@@ -1,0 +1,5 @@
+{
+    "typescript.reportStyleChecksAsWarnings": false,
+    "typescript.implementationsCodeLens.enabled": true,
+    "express.portNumber": 9988
+}
