@@ -572,6 +572,7 @@
 				tasks: [
 					(zapBrs) => {
 						getReq1.attr({style: 'display:none'});
+						getAnsw2.attr({ style: 'display:none' });
 						getAnsw3.attr({
 							transform: 'translate(-330, -80)',
 							style: 'display:inherit'
@@ -587,21 +588,31 @@
 			},
 			{
 				id: 'retrieve report',
-				elementIds: ['zap-to-browser'],
+				elementIds: ['svg-server', 'svg-browser', 'zap-to-browser', 'zap-to-server', 'client-to-zap', 'server-to-zap'],
 				tasks: [
-					(zapBrs) => {
+					(...lines) => {
+						// hide them all
+						lines.forEach((line) => {
+							line.style.display = 'none';
+						})
+						getAnsw3.attr({ style: 'display:none' });
+						// making report small
 						svgReport.attr({
 							transform: 'scale(0.25 0.25) translate(1300 400)',
 							style: 'display:inherit'
 						});
+						// animate icon
 						animateZapIcon(zapIcon);
-						svgReport.animate({
-							transform: 'translate(0 0) scale(1 1)'
-						}, 300, () => {
+						// grow and slide out the report
+						setTimeout(() => {
 							svgReport.animate({
-								transform: 'translate(0 120)'
-							}, 750)
-						})
+								transform: 'translate(0 0) scale(1 1)'
+							}, 300, () => {
+								svgReport.animate({
+									transform: 'translate(0 120)'
+								}, 750)
+							});
+						}, 500)
 					}
 				]
 			}
