@@ -16,9 +16,6 @@ export const drawArrow = (snap) => {
         "stroke-width": 4
     });
 
-    // const brsSrvText = Snap.parse(`<text style="font-size:1rem;height:10rem;width:10rem;"><textPath href="#client-to-server">GET /index.php HTTP/1.1\n...</textPath></text>`);
-    // snap.append(brsSrvText);
-
     const serverBrowser = snap.path(`
         M ${brsSrvcfg.stop.x+15},${brsSrvcfg.stop.y}
         L ${brsSrvcfg.second.x+15},${brsSrvcfg.first.y+15}
