@@ -8,148 +8,15 @@
 
 	<title>Security Automation</title>
 
-	<link rel="stylesheet" href="css/reveal.css">
-	<link rel="stylesheet" href="css/theme/black.css">
+	<link rel="stylesheet" href="css/reveal.css" />
+	<link rel="stylesheet" href="css/theme/black.css" />
 
 	<!-- Theme used for syntax highlighting of code -->
-	<link rel="stylesheet" href="lib/css/zenburn.css">
+	<link rel="stylesheet" href="lib/css/zenburn.css" />
 
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
 
-	<style>
-		html,
-		body,
-		html body {
-			font-family: 'Roboto', Helvetica, Arial, Verdana, sans-serif;
-			background-color: #242b43;
-		}
-
-		html body .reveal section * {
-			font-family: 'Roboto', Helvetica, Arial, Verdana, sans-serif;
-		}
-
-		.reveal .controls[data-controls-layout="edges"] {
-			color: #329e98;
-		}
-
-		.reveal .chapter h1 {
-			color: #329e98;
-		}
-
-		.reveal .hl-red {
-			color: #d53868;
-		}
-
-		.reveal .hl-orange {
-			color: #d59e38;
-		}
-		.reveal .hl-green {
-			color: #329e98;
-		}
-
-		#bis-logo {
-			position: fixed;
-			bottom: 2rem;
-			left: 1.5rem;
-			height: 3rem;
-		}
-
-		#anim-step {
-			font-size: 1.25rem;
-			padding: 0.75rem 2rem;
-			background: transparent;
-			border: 1px solid silver;
-		}
-
-		body .reveal.center,
-		body .reveal.center .slides,
-		body .reveal.center .slides section {
-			box-sizing: border-box;
-		}
-
-		.reveal section blockquote,
-		.reveal section p {
-			text-align: left;
-		}
-
-		.reveal h1,
-		.reveal h2,
-		.reveal h3,
-		.reveal h4 {
-			/* @TODO use bisnode sans for all headers */
-			margin: 0.5em 0 1em;
-			color: #d53868;
-		}
-
-		body .reveal blockquote {
-			font-style: normal;
-		}
-
-		.reveal blockquote legend {
-			margin: 0.5rem;
-		}
-
-		.reveal a, .reveal a:hover, .reveal a:active, .reveal a:visited {
-			color: #329e98;
-		}
-
-		.reveal .footnote {
-			font-size: 0.75em;
-			text-align: right;
-		}
-		.anim-line {
-			visibility: hidden;
-		}
-		.dash-to-server {
-			stroke-dasharray: 1000;
-			stroke-dashoffset: 1000;
-			animation: dash 1s linear forwards;
-		}
-		.dash-from-server {
-			stroke-dasharray: 1000;
-			stroke-dashoffset: 1000;
-			animation: dash 1s linear forwards;
-		}
-
-		.ws-path1{
-			opacity: 0;
-			animation: letter 1s linear forwards;
-			animation-delay: 0.5s;
-		}
-
-		@keyframes dash {
-			to {
-				stroke-dashoffset: 0;
-			}
-		}
-
-		ul.anim-list {
-			display: block; margin: 0 auto; padding: 0; width: 16rem; list-style-type: none;
-		}
-		.reveal .slides section ul.anim-list li.fragment {
-			display: inline-block;
-			list-style-type: none;
-			width: 1rem; height: 1rem;
-			border: 1px solid silver;
-			border-radius: 0.5rem;
-			padding: 0;
-			margin: 0;
-			visibility: visible;
-			opacity: 1;
-		}
-		.reveal .slides section ul.anim-list li.fragment.current-fragment { 
-			background-color: #828282;
-			border: 1px solid #828282;
-		}
-
-		#title h1 {
-			color: #d53868;
-			margin-bottom: 3rem;
-		}
-		#title h4 {
-			color: white;
-		}
-	</style>
+	<link href="css/sec-auto.css" rel="stylesheet" />
 
 	<!-- Printing and PDF exports -->
 	<script>
@@ -641,7 +508,7 @@
 									
 									console.log('animate svgReport', svgReport)
 									svgReport.animate({
-										transform: 'translate(0 120)'
+										transform: 'translate(0 240)'
 									}, 750)
 								});
 							},
