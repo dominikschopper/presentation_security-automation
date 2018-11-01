@@ -69,10 +69,10 @@ export const reportLines = [
 
 
 export const zapToReportArrow = {
-    x1: report.x + report.width / 2,
-    y1: report.y + report.height,
-    x2: report.x + report.width / 2,
-    y2: report.y + report.height + 120
+    x1: report.x + report.width / 2 - 10,
+    y1: report.y + report.height * 1.5,
+    x2: report.x + report.width / 2 - 10,
+    y2: report.y + report.height * 2
 }
 
 export const browserServerArrow = {

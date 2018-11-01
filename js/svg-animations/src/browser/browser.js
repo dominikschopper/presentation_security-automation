@@ -9,13 +9,14 @@ export const drawBrowser = (snap) => {
         rx: 4,
         ry: 4,
         stroke: bisGreen,
-        fill: 'white'
+        fill: 'white',
+        style: 'stroke-width:2px'
     });
     const txt =  snap.text(textCfg.x, textCfg.y,  'browser');
     txt.attr({
         'textLength': '100',
         stroke: bisGreen,
-        style: `font-size: 22px;`
+        style: `font-size: 22px`
     });
 
     const browserGroup = snap.g(browserRect, txt);

@@ -8,7 +8,8 @@ export const drawServer = (snap) => {
     serverRect.attr({
         rx: 4,
         ry: 4,
-        fill: 'white'
+        fill: 'white',
+        style: 'stroke-width:2px'
     });
     const txt = snap.text(textCfg.x, textCfg.y, 'server');
     txt.attr({
