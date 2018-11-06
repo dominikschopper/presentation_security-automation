@@ -1,0 +1,30 @@
+version: '3'
+services:
+  zap:
+    image: artifactory.bisnode.net/bisnode/zap_juice_demo
+    volumes:
+      - .:/zap/wrk/
+    ports:
+      - 8080:8080
+    container_name: zap
+    networks:
+      - juice_net
+    command: "zap.sh -daemon -host 0.0.0.0 -port 8080 -configfile /zap/zapconf --session /zap/session/juice_empty.session"
+  juice:
+    image: bkimminich/juice-shop
+    ports:
+      - 3000:3000
+    container_name: juice
+    networks:
+      - juice_net
+  selenium:
+    image: artifactory.bisnode.net/selenium-node
+    container_name: selenium
+    volumes:
+      - ./selenium:/tests/
+    networks:
+      - juice_net
+    command: node /tests/juice_test.js
+networks:
+  juice_net:
+    driver: bridge

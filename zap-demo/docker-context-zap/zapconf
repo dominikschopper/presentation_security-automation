@@ -1,0 +1,3 @@
+api.disablekey=true
+api.addrs.addr.name=.*
+api.addrs.addr.regex=true
