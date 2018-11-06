@@ -16,13 +16,13 @@ export const drawReport = (snap) => {
     });
 
 
-    const group = snap.g(rect, lines[0], lines[1], lines[2]);
+    const group = snap.g(rect, ...lines);
     group.attr({
         stroke: bisOrange,
         style: 'display:none'
     });
     group.attr({
-        "stroke-width": 3
+        "stroke-width": 6
     })
 
     return group;

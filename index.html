@@ -35,14 +35,19 @@
 
 			<section id="title" class="chapter">
 				<h1>security automation</h1>
-				<h4>our journey into the dark woods of security</h4>
+				<h4>Scanning Your Web Applications Regularly and Easily</h4>
 			</section>
 
 			<section>
 				<!-- SLIDE GROUP: intro /  me / my company -->
 
 				<!-- SLIDE: topic intro -->
-				<section id="slide-02">
+				<section 
+					id="slide-02"
+					data-background-image="/images/sec-threats-bg.jpg"
+					data-background-size="28%"
+					data-background-opacity="0.5"
+					data-background-position="95% 30%">
 					<h4>first encounters of the strange kind</h4>
 
 					<blockquote style="font-size:1.75rem;">
@@ -70,77 +75,79 @@
 					</blockquote>
 
 					<aside class="notes" data-markdown="">
-						- my first webserver in 2001, five small mostly overlooked websites (100vis/day a lot!)
-						- I setup logwatch ... => X portsvcans/ssh login attempts/... every day
+						- my first webserver with roughly five small mostly overlooked websites (50vis/day a lot!)
+						- I setup logwatch ... => ssh brute force attempts/web app scans ... **every day**
 						- a colleague of mine attached his pc via DSL had a network sniffer attached => portscan within 5min
 						- script kiddies/hackers/... everywhere
 					</aside>
 				</section>
 
-				<section id="slide-01">
+				<section
+					id="slide-01"
+					data-background-image="images/dschopper.jpg"
+					data-background-size="264px 276px"
+					data-background-position="80% 25%">
 
 					<h3>Disclaimer</h3>
 
-					<div style="display:flex;">
-						<ul style="width:800px">
+						<p>Dominik Schopper, doing web stuff</p>
+
+						<ul style="margin-left: 0">
 							<li>studied Pol. Scie</li>
-							<li>got trained to be a linux admin</li>
+							<li>trained to be a linux admin</li>
 							<li>learned to be a frontend developer</li>
-							<li>now team lead frontend for <a href="https://www.bisnode.de/">Bisnode Germany</a></li>
+							<li>frontend team lead/ frontend architect for
+								<a href="https://www.bisnode.de/">Bisnode Germany</a></li>
 						</ul>
 
-						<img src="images/dschopper.jpg" style="width: 240px;margin-left: 2rem;height: 251px;" />
-					</div>
+						
 
-					<aside class="notes" data-markdown="">
-						- i am talking about security - i am not a security export
+					<aside class="notes" data-markdown>
+						- I have to deal with security issues every day
+						- as a developer (or admin) this is **yet another task**!!
 						- but i believe that: **security is too important ot leave it to experts only**
 						- how we (as dev.s/admins/devops) can have checks to avoid the obvious mistakes
 					</aside>
 				</section>
 
-				<section>
+				<section
+					data-background-image="images/bisnode-data-bg.jpg" 
+					data-background-size="70%"
+					data-background-position="100% 20%">
 
 					<h3>The Company I work for</h3>
 					<p>Bisnode Germany</p>
 
 					<ul>
-						<li>part of the Bisnode Group (in near20 countries in Europe)</li>
+						<li>part of the Bisnode Group (in 19 countries in Europe)</li>
 						<li>selling data: marketing/risk/...</li>
 						<li>been on the market for a long before the internet</li>
 						<li>thus we are in the process of a total digital transformation</li>
 					</ul>
 
 					<aside class="notes" data-markdown="">
-						- bisnode: data driven company
-						- development teams all over europe
-						- security needs to be focussed
-						- stronger IT since 10yrs (microservices, docker, ...)
+						- bisnode germany - ex publishing house / no IT focus
+						- 10yrs ago, turnaround, IT in focus
+						- monolithic Systems besides a new microservice arch / using docker / angular ...
+						- GDPR - security needs to be focused
 					</aside>
 				</section>
 
 				<section id="slide-03">
 
-					<h3>security perspective</h3>
+					<h3>security management</h3>
 					<ul>
-						<li>security should be &quot;in our nature&quot;</li>
-						<li>
-							making security part of the SDLC<sup>*</sup>
-
-							<ul>
-								<li class="fragment">Awareness and Training (OWASP, PenTesting, ...)</li>
-								<li class="fragment">Static Code analysis</li>
-								<li class="fragment">Code Reviews (specifically have that focus)</li>
-								<li class="fragment">Find bugs/security holes asap, automatically</li>
-							</ul>
-						</li>
+						<li>security must be &quot;in our nature&quot; as of yesterday</li>
+						<li>establishing standards</li>
+						<li>making security part of the SDLC<sup>*</sup></li>
 					</ul>
 					<div style="font-size:0.5em; text-align: left">
 						<sup>*</sup>Software Development Lifecycle
 					</div>
 
 					<aside class="notes" data-markdown="">
-
+						- non functional req - security is part of IT
+						- 
 					</aside>
 
 				</section>
@@ -160,9 +167,9 @@
 					</ul>
 
 					<aside class="notes" data-markdown>
-						- contracting external security companies with consultants
-						- buying scanning services
-						- get our own experience
+						- big expectations
+						- onboarding of development teams
+						- clearing
 					</aside>
 				</section>
 
@@ -182,20 +189,12 @@
 
 				<section id="slide-06">
 					<h3>how does it work?</h3>
-					<!-- button id="anim-step">next</button -->
+
 					<div>
 						<svg id="zap-aninmation" style="background-color:white;border: 1px solid silver" height="450" width="800"></svg>
 
-						<ul class="anim-list">
+						<ul class="anim-list" id="auto-anim-list">
 							<li data-id="0" class="fragment"></li>
-							<li data-id="0" class="fragment"></li>
-							<li data-id="1" class="fragment"></li>
-							<li data-id="2" class="fragment"></li>
-							<li data-id="3" class="fragment"></li>
-							<li data-id="4" class="fragment"></li>
-							<li data-id="5" class="fragment"></li>
-							<li data-id="6" class="fragment"></li>
-							<li data-id="7" class="fragment"></li>
 						</ul>
 
 					</div>
@@ -207,7 +206,7 @@
 			<script type="module" src="js/svg-animations/src/index.js"></script>
 
 			<section>
-				<section id="slide-07" data-markdown="">
+				<section id="slide-07" data-markdown>
 					### show ZAP in docker
 				</section>
 
@@ -263,7 +262,25 @@
 			]
 		});
 	</script>
-	<script>
+	<script type="module">
+		import {
+			svgBrowser,
+			svgServer,
+			getReq1,
+			getReq2,
+			getAnsw1,
+			getAnsw2,
+			getAnsw3,
+			zap,
+			zapIcon,
+			svgReport,
+			seleniumDocker,
+			serverDocker,
+			zapDocker,
+			seleniumLogo,
+			zapRestImage
+		} from '/js/svg-animations/src/index.js';
+		
 		const animateZapIcon = (zapIcon) => {
 			zapIcon.attr({
 				transform: ''
@@ -307,11 +324,12 @@
 		const animationFlow = [
 			{
 				id: 'show browser and server',
-				elementIds: ['svg-server', 'svg-browser'],
+				elementIds: [svgServer, svgBrowser],
 				tasks: [
 					(srv, brs) => {
-						svgBrowser.attr({style:'display:inherit'});
-						svgServer.attr({style:'display:inherit'});
+						console.log(srv);
+						srv.attr({style:''});
+						brs.attr({style:''});
 					}
 				]
 			},
@@ -321,7 +339,7 @@
 				tasks: [
 					(el) => {
 						getReq1.attr({
-							'style': 'display:inherit'
+							'style': ''
 						});
 						setTimeout(() => {
 							el.style.visibility = 'visible';
@@ -431,7 +449,6 @@
 				elementIds: ['server-to-zap', 'zap-to-server'],
 				tasks: [
 					(zapBrs, zapSrv) => {
-						console.log('getAnsw2', getAnsw2);
 
 						setTimeout(() => {
 							getReq2.attr({ style: 'display:none' });
@@ -474,9 +491,9 @@
 			},
 			{
 				id: 'retrieve report',
-				elementIds: ['zap-report-arrow', 'svg-server', 'svg-browser', 'zap-to-browser', 'zap-to-server', 'client-to-zap', 'server-to-zap'],
+				elementIds: ['svg-server', 'svg-browser', 'zap-to-browser', 'zap-to-server', 'client-to-zap', 'server-to-zap'],
 				tasks: [
-					(reportArrow, ...lines) => {
+					(...lines) => {
 						// hide all lines via HTMLElement.styles
 						lines.forEach((line) => {
 							line.style.display = 'none';
@@ -503,12 +520,9 @@
 								300,
 								null, 
 								() => {
-									reportArrow.style.display = 'inherit';
-									reportArrow.classList.add('dash-to-server');
-									
 									console.log('animate svgReport', svgReport)
 									svgReport.animate({
-										transform: 'translate(0 240)'
+										transform: 'translate(0 160)'
 									}, 750)
 								});
 							},
@@ -516,10 +530,66 @@
 						)
 					}
 				]
+			},
+			{
+				id: 'show selenium and REST api',
+				elementIds: [seleniumLogo, zapRestImage, svgBrowser, svgServer],
+				tasks: [
+					(sel, rest, brs, srv) => {
+						brs.attr({style: ''});
+						srv.attr({style: ''});
+
+						setTimeout(() => {
+							sel.attr({style:'display:inherit'});
+							rest.attr({style:'display:inherit'});
+						}, 750)
+					}
+				]
+			},
+			{
+				id: 'draw docker containers',
+				elementIds: ['client-to-zap', 'zap-to-server', 'server-to-zap', 'zap-to-browser'],
+				tasks: [
+					() => {
+						svgReport.attr({style: 'display:none'});
+					},
+
+					(...lines) => {
+						const dockers = [ seleniumDocker, zapDocker, serverDocker ];
+						
+						dockers.forEach((dock) => {
+							dock.attr({
+								class: 'dash-to-server',
+								style: ''
+							});
+						});
+
+						setTimeout(() => {
+							console.log('lines', lines);
+							lines.forEach((obj, idx) => {
+								obj.style.display = null;
+								if (idx <= 1) {
+									obj.classList.add('dash-to-server');
+								} else {
+									obj.classList.add('dash-from-server');
+								}
+							});
+						}, 750);
+					}
+				]
 			}
 		];
 
+		const addFragmentsForAnimation = (() => {
+			const listId = 'auto-anim-list';
+			const listElement = document.getElementById(listId);
 
+			const elements = animationFlow.map((obj, id) => {
+				return `<li data-id="${id}" class="fragment"></li>`;
+			});
+
+			listElement.innerHTML = elements.join('\n\t\t');
+		})();
 
 		let stepNo = -1;
 
@@ -528,16 +598,17 @@
 			console.log('ev.fragment', ev.fragment.dataset.fragmentIndex);
 
 			stepNo = ev.fragment.dataset.fragmentIndex;
+			console.log('stepNo(%o) - fragmentIndes(%o)', stepNo, ev.fragment.dataset.fragmentIndex)
 			const cfg = animationFlow[stepNo];
 
 			if (stepNo >= animationFlow.length || stepNo < 0) {
 				return;
 			}
 
-			// showing animation title in console
 			console.log('SVG animation', cfg.id);
 
 			const elements = cfg.elementIds.map((id) => {
+				console.log('loading id(%o): %o', typeof id, id);
 				if (typeof id === 'string') {
 					return document.getElementById(id);
 				}
@@ -551,14 +622,10 @@
 		};
 
 		Reveal.addEventListener('slidechanged', function (event) {
-			// event.previousSlide, event.currentSlide, event.indexh, event.indexv
-			current = parseInt(event.currentSlide.id.split('-')[1]);
-			console.log('slide changed', current, event.currentSlide);
+			const current = parseInt(event.currentSlide.id.split('-')[1]);
 			if (event.currentSlide.id === 'slide-06') {
-				console.log('adding fragment event')
 				Reveal.addEventListener('fragmentshown', animateSvgHandler);
 			} else {
-				console.log('removing fragment event')
 				Reveal.removeEventListener('fragmentshown', animateSvgHandler)
 			}
 		});

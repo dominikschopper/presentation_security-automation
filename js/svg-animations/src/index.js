@@ -6,15 +6,24 @@ import { drawGet as drawBrowserServerGet } from "./http-messages/get-server.js";
 import {drawGetAnswer as drawGetBrsSrvAnswer} from './http-messages/get-answer.js';
 import { drawReport } from './report/report.js';
 import { drawZap } from './zap/zap.js';
-// import { browser as browserCfg } from './config/index.js';
+import { drawBrowserDocker } from './browser/browser-docker.js';
+import { drawServerDocker } from './server/server-docker.js';
+import { drawZapDocker } from './zap/zap-docker.js';
+import { drawSeleniumLogo } from './browser/selenium-logo.js';
+import { drawRestImage } from "./zap/rest-image.js";
 
 const snap = Snap('#zap-aninmation');
 
 const browser = drawBrowser(snap);
+const seleniumLogo = drawSeleniumLogo(snap);
+
 const server = drawServer(snap);
 
 const arrow = drawBrowserServerArrow(snap);
 const zapObjs = drawZap(snap);
+const zap = zapObjs.zap;
+const zapIcon = zapObjs.zapIcon;
+const zapRestImage = drawRestImage(snap);
 
 const getServerRequest1 = drawBrowserServerGet(snap);
 getServerRequest1.attr({ id: 'request-1' });
@@ -31,16 +40,26 @@ getServerAnswer2.attr({id: 'response-2'});
 const getServerAnswer3 = drawGetBrsSrvAnswer(snap);
 getServerAnswer3.attr({ id: 'response-3'});
 
+const seleniumDocker = drawBrowserDocker(snap);
+const zapDocker = drawZapDocker(snap);
+const serverDocker = drawServerDocker(snap);
+
 const report = drawReport(snap);
 
-window.svgBrowser = browser;
-window.svgServer = server;
-window.getReq1 = getServerRequest1;
-window.getReq2 = getServerRequest2;
-window.getAnsw1 = getServerAnswer1;
-window.getAnsw2 = getServerAnswer2;
-window.getAnsw3 = getServerAnswer3;
-window.zap = zapObjs.zap;
-window.zapIcon = zapObjs.zapIcon;
-window.svgReport = report;
-// console.log('arrow (%o)', arrow);
+export {
+    browser as svgBrowser,
+    server as svgServer,
+    getServerRequest1 as getReq1,
+    getServerRequest2 as getReq2,
+    getServerAnswer1 as getAnsw1,
+    getServerAnswer2 as getAnsw2,
+    getServerAnswer3 as getAnsw3,
+    zap,
+    zapIcon,
+    report as svgReport,
+    seleniumDocker,
+    serverDocker,
+    zapDocker,
+    seleniumLogo,
+    zapRestImage
+}

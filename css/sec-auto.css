@@ -122,8 +122,13 @@ body .reveal blockquote {
 }
 
 ul.anim-list {
-    display: block; margin: 0 auto; padding: 0; width: 16rem; list-style-type: none;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    width: 21rem;
+    list-style-type: none;
 }
+
 .reveal .slides section ul.anim-list li.fragment {
     display: inline-block;
     list-style-type: none;
@@ -135,6 +140,7 @@ ul.anim-list {
     visibility: visible;
     opacity: 1;
 }
+
 .reveal .slides section ul.anim-list li.fragment.current-fragment { 
     background-color: #828282;
     border: 1px solid #828282;

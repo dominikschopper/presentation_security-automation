@@ -52,19 +52,23 @@ export const zapText = {
 export const report = {
     x: zap.x + zap.width / 2,
     y: zap.y - 30,
-    height: 60,
-    width: 48,
-    border: 4
+    height: 130,
+    width: 96,
+    border: 6
 };
 
 const lineLength = report.width - (report.border * 2);
 const lineStart = report.x + report.border;
 
 export const reportLines = [
-    { x1: lineStart, y1: report.y + 98, x2: report.x + lineLength },
-    { x1: lineStart, y1: report.y + 110, x2: report.x + lineLength },
-    { x1: lineStart, y1: report.y + 122, x2: report.x + lineLength },
-    { x1: lineStart, y1: report.y + 134, x2: report.x + lineLength }
+    { x1: lineStart, y1: report.y + 98, x2: report.x + lineLength - 30 },
+    { x1: lineStart, y1: report.y + 110, x2: report.x + lineLength - 30 },
+    { x1: lineStart, y1: report.y + 122, x2: report.x + lineLength - 30 },
+    { x1: lineStart, y1: report.y + 134, x2: report.x + lineLength },
+    { x1: lineStart, y1: report.y + 146, x2: report.x + lineLength },
+    { x1: lineStart, y1: report.y + 158, x2: report.x + lineLength },
+    { x1: lineStart, y1: report.y + 170, x2: report.x + lineLength },
+    { x1: lineStart, y1: report.y + 182, x2: report.x + lineLength }
 ];
 
 
@@ -123,3 +127,26 @@ export const getBrSrvAnswerText = {
     x: getBrSrvAnswerRect.x + 5,
     y: getBrSrvAnswerRect.y + 15
 }
+
+export const browserDocker = {
+    start: { x: browser.x - 10, y: browser.y - 10 },
+    first: { x: browser.x - 10, y: browser.y + browser.height + 55 },
+    second: { x: browser.x + browser.width + 25, y: browser.y + browser.height + 55 },
+    stop: { x: browser.x + browser.width + 25, y: browser.y - 10  }
+};
+
+export const zapDocker = {
+    start: { x: zap.x - 10, y: zap.y - 10 },
+    first: { x: zap.x - 10, y: zap.y + zap.height + 55 },
+    second: { x: zap.x + zap.width + 25, y: zap.y + zap.height + 55 },
+    stop: { x: zap.x + zap.width + 25, y: zap.y - 10  }
+};
+
+export const serverDocker = {
+    start: { x: server.x - 10, y: server.y - 10 },
+    first: { x: server.x - 10, y: server.y + server.height + 55 },
+    second: { x: server.x + server.width + 25, y: server.y + server.height + 55 },
+    stop: { x: server.x + server.width + 25, y: server.y - 10  }
+};
+
+console.log('browserDocker(%o)\nzapDocker(%o)\nserverDocker(%o', browserDocker, zapDocker, serverDocker);
