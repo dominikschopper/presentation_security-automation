@@ -83,7 +83,7 @@ ZAP Scanning Report
 <td><a href="#medium">Medium</a></td><td align="center">2</td>
 </tr>
 <tr bgcolor="#e8e8e8">
-<td><a href="#low">Low</a></td><td align="center">4</td>
+<td><a href="#low">Low</a></td><td align="center">5</td>
 </tr>
 <tr bgcolor="#e8e8e8">
 <td><a href="#info">Informational</a></td><td align="center">0</td>
@@ -203,7 +203,7 @@ ZAP Scanning Report
   
   
 <tr bgcolor="#e8e8e8">
-<td class="indent1" width="20%">URL</td><td width="80%">http://juice:3000/socket.io/?EIO=3&amp;transport=websocket&amp;sid=JDAKM1EIdYmNhuEzAAAA</td>
+<td class="indent1" width="20%">URL</td><td width="80%">http://juice:3000/socket.io/?EIO=3&amp;transport=polling&amp;t=MRfc3gH&amp;sid=yJPGUPFxs8y62xhFAAAB</td>
 </tr>
   
 <tr bgcolor="#e8e8e8">
@@ -215,31 +215,13 @@ ZAP Scanning Report
 </tr>
   
 <tr bgcolor="#e8e8e8">
-<td class="indent2" width="20%">Evidence</td><td width="80%">JDAKM1EIdYmNhuEzAAAA</td>
+<td class="indent2" width="20%">Evidence</td><td width="80%">yJPGUPFxs8y62xhFAAAB</td>
 </tr>
   
   
   
 <tr bgcolor="#e8e8e8">
-<td class="indent1" width="20%">URL</td><td width="80%">http://juice:3000/socket.io/?EIO=3&amp;transport=polling&amp;t=MRFt6Zt&amp;sid=JDAKM1EIdYmNhuEzAAAA</td>
-</tr>
-  
-<tr bgcolor="#e8e8e8">
-<td class="indent2" width="20%">Method</td><td width="80%">GET</td>
-</tr>
-  
-<tr bgcolor="#e8e8e8">
-<td class="indent2" width="20%">Parameter</td><td width="80%">sid</td>
-</tr>
-  
-<tr bgcolor="#e8e8e8">
-<td class="indent2" width="20%">Evidence</td><td width="80%">JDAKM1EIdYmNhuEzAAAA</td>
-</tr>
-  
-  
-  
-<tr bgcolor="#e8e8e8">
-<td class="indent1" width="20%">URL</td><td width="80%">http://juice:3000/socket.io/?EIO=3&amp;transport=polling&amp;t=MRFt6Wf&amp;sid=JDAKM1EIdYmNhuEzAAAA</td>
+<td class="indent1" width="20%">URL</td><td width="80%">http://juice:3000/socket.io/?EIO=3&amp;transport=websocket&amp;sid=yJPGUPFxs8y62xhFAAAB</td>
 </tr>
   
 <tr bgcolor="#e8e8e8">
@@ -251,13 +233,13 @@ ZAP Scanning Report
 </tr>
   
 <tr bgcolor="#e8e8e8">
-<td class="indent2" width="20%">Evidence</td><td width="80%">JDAKM1EIdYmNhuEzAAAA</td>
+<td class="indent2" width="20%">Evidence</td><td width="80%">yJPGUPFxs8y62xhFAAAB</td>
 </tr>
   
   
   
 <tr bgcolor="#e8e8e8">
-<td width="20%">Instances</td><td width="80%">3</td>
+<td width="20%">Instances</td><td width="80%">2</td>
 </tr>
   
 <tr bgcolor="#e8e8e8">
@@ -334,115 +316,6 @@ ZAP Scanning Report
   
 <tr bgcolor="#e8e8e8">
 <td width="20%">WASC Id</td><td width="80%">13</td>
-</tr>
-  
-<tr bgcolor="#e8e8e8">
-<td width="20%">Source ID</td><td width="80%">3</td>
-</tr>
-
-</tbody></table>
-<div class="spacer"></div>
-<a name="low"></a><table class="results" width="100%">
-  
-  
-  
-<tbody><tr class="risk-low" height="24">
-<th width="20%">Low (Medium)</th><th width="80%">X-Content-Type-Options Header Missing</th>
-</tr>
-  
-  
-  
-  
-<tr bgcolor="#e8e8e8">
-<td width="20%">Description</td><td width="80%"><p>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</p></td>
-</tr>
-<tr valign="top">
-<td colspan="2"></td>
-</tr>
-  
-  
-  
-<tr bgcolor="#e8e8e8">
-<td class="indent1" width="20%">URL</td><td width="80%">http://juice:3000/socket.io/?EIO=3&amp;transport=polling&amp;t=MRFt6Wf&amp;sid=JDAKM1EIdYmNhuEzAAAA</td>
-</tr>
-  
-<tr bgcolor="#e8e8e8">
-<td class="indent2" width="20%">Method</td><td width="80%">GET</td>
-</tr>
-  
-<tr bgcolor="#e8e8e8">
-<td class="indent2" width="20%">Parameter</td><td width="80%">X-Content-Type-Options</td>
-</tr>
-  
-  
-  
-<tr bgcolor="#e8e8e8">
-<td class="indent1" width="20%">URL</td><td width="80%">http://juice:3000/socket.io/socket.io.js</td>
-</tr>
-  
-<tr bgcolor="#e8e8e8">
-<td class="indent2" width="20%">Method</td><td width="80%">GET</td>
-</tr>
-  
-<tr bgcolor="#e8e8e8">
-<td class="indent2" width="20%">Parameter</td><td width="80%">X-Content-Type-Options</td>
-</tr>
-  
-  
-  
-<tr bgcolor="#e8e8e8">
-<td class="indent1" width="20%">URL</td><td width="80%">http://juice:3000/socket.io/?EIO=3&amp;transport=polling&amp;t=MRFt6Zt&amp;sid=JDAKM1EIdYmNhuEzAAAA</td>
-</tr>
-  
-<tr bgcolor="#e8e8e8">
-<td class="indent2" width="20%">Method</td><td width="80%">GET</td>
-</tr>
-  
-<tr bgcolor="#e8e8e8">
-<td class="indent2" width="20%">Parameter</td><td width="80%">X-Content-Type-Options</td>
-</tr>
-  
-  
-  
-<tr bgcolor="#e8e8e8">
-<td class="indent1" width="20%">URL</td><td width="80%">http://juice:3000/socket.io/?EIO=3&amp;transport=polling&amp;t=MRFt6Q_</td>
-</tr>
-  
-<tr bgcolor="#e8e8e8">
-<td class="indent2" width="20%">Method</td><td width="80%">GET</td>
-</tr>
-  
-<tr bgcolor="#e8e8e8">
-<td class="indent2" width="20%">Parameter</td><td width="80%">X-Content-Type-Options</td>
-</tr>
-  
-  
-  
-<tr bgcolor="#e8e8e8">
-<td width="20%">Instances</td><td width="80%">4</td>
-</tr>
-  
-<tr bgcolor="#e8e8e8">
-<td width="20%">Solution</td><td width="80%"><p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p></td>
-</tr>
-  
-<tr bgcolor="#e8e8e8">
-<td width="20%">Other information</td><td width="80%"><p>This issue still applies to error type pages (401, 403, 500, etc) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.</p><p>At "High" threshold this scanner will not alert on client or server error responses.</p></td>
-</tr>
-<tr valign="top">
-<td colspan="2"></td>
-</tr>
-  
-<tr bgcolor="#e8e8e8">
-<td width="20%">Reference</td><td width="80%"><p>http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx</p><p>https://www.owasp.org/index.php/List_of_useful_HTTP_headers</p></td>
-</tr>
-  
-<tr bgcolor="#e8e8e8">
-<td width="20%">CWE Id</td><td width="80%">16</td>
-</tr>
-  
-<tr bgcolor="#e8e8e8">
-<td width="20%">WASC Id</td><td width="80%">15</td>
 </tr>
   
 <tr bgcolor="#e8e8e8">
@@ -605,6 +478,101 @@ ZAP Scanning Report
   
 <tr bgcolor="#e8e8e8">
 <td width="20%">WASC Id</td><td width="80%">14</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Source ID</td><td width="80%">3</td>
+</tr>
+
+</tbody></table>
+<div class="spacer"></div>
+<a name="low"></a><table class="results" width="100%">
+  
+  
+  
+<tbody><tr class="risk-low" height="24">
+<th width="20%">Low (Medium)</th><th width="80%">X-Content-Type-Options Header Missing</th>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Description</td><td width="80%"><p>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</p></td>
+</tr>
+<tr valign="top">
+<td colspan="2"></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td class="indent1" width="20%">URL</td><td width="80%">http://juice:3000/socket.io/socket.io.js</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td class="indent2" width="20%">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td class="indent2" width="20%">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td class="indent1" width="20%">URL</td><td width="80%">http://juice:3000/socket.io/?EIO=3&amp;transport=polling&amp;t=MRfc3bY</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td class="indent2" width="20%">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td class="indent2" width="20%">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td class="indent1" width="20%">URL</td><td width="80%">http://juice:3000/socket.io/?EIO=3&amp;transport=polling&amp;t=MRfc3gH&amp;sid=yJPGUPFxs8y62xhFAAAB</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td class="indent2" width="20%">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td class="indent2" width="20%">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Instances</td><td width="80%">3</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Solution</td><td width="80%"><p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Other information</td><td width="80%"><p>This issue still applies to error type pages (401, 403, 500, etc) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.</p><p>At "High" threshold this scanner will not alert on client or server error responses.</p></td>
+</tr>
+<tr valign="top">
+<td colspan="2"></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Reference</td><td width="80%"><p>http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx</p><p>https://www.owasp.org/index.php/List_of_useful_HTTP_headers</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">CWE Id</td><td width="80%">16</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">WASC Id</td><td width="80%">15</td>
 </tr>
   
 <tr bgcolor="#e8e8e8">
@@ -791,6 +759,73 @@ ZAP Scanning Report
   
 <tr bgcolor="#e8e8e8">
 <td width="20%">CWE Id</td><td width="80%">525</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">WASC Id</td><td width="80%">15</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Source ID</td><td width="80%">3</td>
+</tr>
+
+</tbody></table>
+<div class="spacer"></div>
+<a name="low"></a><table class="results" width="100%">
+  
+  
+  
+<tbody><tr class="risk-low" height="24">
+<th width="20%">Low (Medium)</th><th width="80%">X-Content-Type-Options Header Missing</th>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Description</td><td width="80%"><p>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</p></td>
+</tr>
+<tr valign="top">
+<td colspan="2"></td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td class="indent1" width="20%">URL</td><td width="80%">http://detectportal.firefox.com/success.txt</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td class="indent2" width="20%">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td class="indent2" width="20%">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Instances</td><td width="80%">1</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Solution</td><td width="80%"><p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Other information</td><td width="80%"><p>This issue still applies to error type pages (401, 403, 500, etc) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.</p><p>At "High" threshold this scanner will not alert on client or server error responses.</p></td>
+</tr>
+<tr valign="top">
+<td colspan="2"></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Reference</td><td width="80%"><p>http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx</p><p>https://www.owasp.org/index.php/List_of_useful_HTTP_headers</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">CWE Id</td><td width="80%">16</td>
 </tr>
   
 <tr bgcolor="#e8e8e8">

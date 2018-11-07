@@ -5,7 +5,7 @@ services:
     volumes:
       - .:/zap/wrk/
     ports:
-      - 8080:8080
+      - 8090:8080
     container_name: zap
     networks:
       - juice_net
