@@ -299,7 +299,7 @@
 			zapDocker,
 			seleniumLogo,
 			zapRestImage
-		} from '/js/svg-animations/src/index.js';
+		} from 'js/svg-animations/src/index.js';
 		
 		const animateZapIcon = (zapIcon) => {
 			zapIcon.attr({
@@ -606,7 +606,7 @@
 		const addFragmentsForAnimation = (() => {
 			const listId = 'auto-anim-list';
 			const listElement = document.getElementById(listId);
-
+			console.log('adding animation fragments');
 			const elements = animationFlow.map((obj, id) => {
 				return `<li data-id="${id}" class="fragment"></li>`;
 			});
