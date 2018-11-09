@@ -1,16 +1,16 @@
 @font-face {
     font-family: "bisnode-sans";
-    src: url("assets/bisnode-sans/BisnodeSans-Bold.eot") format("OpenType"),
-        url("assets/bisnode-sans/BisnodeSans-Bold.woff") format("woff"),
-        url("assets/bisnode-sans/BisnodeSans-Bold.woff2") format("woff2");
+    src: url("../assets/bisnode-sans/BisnodeSans-Bold.eot") format("OpenType"),
+        url("../assets/bisnode-sans/BisnodeSans-Bold.woff") format("woff"),
+        url("../assets/bisnode-sans/BisnodeSans-Bold.woff2") format("woff2");
         font-weight: normal;
 }
 
 @font-face {
     font-family: "bisnode-sans";
-    src: url("assets/bisnode-sans/BisnodeSans-Regular.eot") format("OpenType"),
-         url("assets/bisnode-sans/BisnodeSans-Regular.woff") format("woff"),
-         url("assets/bisnode-sans/BisnodeSans-Regular.woff2") format("woff2");
+    src: url("../assets/bisnode-sans/BisnodeSans-Regular.eot") format("OpenType"),
+         url("../assets/bisnode-sans/BisnodeSans-Regular.woff") format("woff"),
+         url("../assets/bisnode-sans/BisnodeSans-Regular.woff2") format("woff2");
          font-weight: bold;
 }
 
@@ -32,17 +32,21 @@ html body .reveal section * {
 
 .reveal .chapter h1 {
     color: #329e98;
+    font-weight: 500;
 }
 
 .reveal .hl-red {
     color: #d53868;
+    font-weight: 500;
 }
 
 .reveal .hl-orange {
     color: #d59e38;
+    font-weight: 500;
 }
 .reveal .hl-green {
     color: #329e98;
+    font-weight: 500;
 }
 
 #bis-logo {
@@ -77,6 +81,7 @@ html body .reveal section h4 {
     font-family: bisnode-sans, Verdana, Geneva, Tahoma, sans-serif;
     margin: 0.5em 0 1em;
     color: #d53868;
+    font-weight: 500;
 }
 
 body .reveal blockquote {
