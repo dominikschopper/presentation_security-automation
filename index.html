@@ -45,9 +45,9 @@
 				<section 
 					id="slide-02"
 					data-background-image="/images/sec-threats-bg.jpg"
-					data-background-size="28%"
-					data-background-opacity="0.5"
-					data-background-position="95% 30%">
+					data-background-size="38%"
+					data-background-opacity="0.3"
+					data-background-position="100% 13%">
 					<h4>first encounters of the strange kind</h4>
 
 					<blockquote style="font-size:1.75rem;">
@@ -77,7 +77,6 @@
 					<aside class="notes" data-markdown="">
 						- my first webserver with roughly five small mostly overlooked websites (50vis/day a lot!)
 						- I setup logwatch ... => ssh brute force attempts/web app scans ... **every day**
-						- a colleague of mine attached his pc via DSL had a network sniffer attached => portscan within 5min
 						- script kiddies/hackers/... everywhere
 					</aside>
 				</section>
@@ -85,8 +84,8 @@
 				<section
 					id="slide-01"
 					data-background-image="images/dschopper.jpg"
-					data-background-size="264px 276px"
-					data-background-position="80% 25%">
+					data-background-size="290px 303px"
+					data-background-position="90% 15%">
 
 					<h3>Disclaimer</h3>
 
@@ -98,22 +97,22 @@
 							<li>learned to be a frontend developer</li>
 							<li>frontend team lead/ frontend architect for
 								<a href="https://www.bisnode.de/">Bisnode Germany</a></li>
+							<li>but I am not a hacker/pen.tester/...</li>
 						</ul>
 
 						
 
 					<aside class="notes" data-markdown>
-						- I have to deal with security issues every day
-						- as a developer (or admin) this is **yet another task**!!
-						- but i believe that: **security is too important ot leave it to experts only**
-						- how we (as dev.s/admins/devops) can have checks to avoid the obvious mistakes
+						- if you open your eyes you deal with security issues every day!
+						- but as a developer (or admin) this is **yet another task**!!
+						- so **security is too important ot leave it to experts only**
 					</aside>
 				</section>
 
 				<section
-					data-background-image="images/bisnode-data-bg.jpg" 
-					data-background-size="70%"
-					data-background-position="100% 20%">
+					data-background-image="images/bisnode-data-b-resized.png" 
+					data-background-size="36%"
+					data-background-position="90% 30%">
 
 					<h3>The Company I work for</h3>
 					<p>Bisnode Germany</p>
@@ -126,30 +125,54 @@
 					</ul>
 
 					<aside class="notes" data-markdown="">
-						- bisnode germany - ex publishing house / no IT focus
-						- 10yrs ago, turnaround, IT in focus
-						- monolithic Systems besides a new microservice arch / using docker / angular ...
-						- GDPR - security needs to be focused
+						- bisnode germany - ex **publishing house** / no IT focus
+						- 10yrs ago, turnaround, **digital transformation**
+						- strong effort to modernize
+						- not only, but **GDPR** - brought **sec** and **priv in focus**
 					</aside>
 				</section>
 
-				<section id="slide-03">
+				<section id="slide-03" 
+					data-background-image="images/breaking-bad-bg-resized.jpg" 
+					data-background-size="37%"
+					data-background-position="92% 20%">
 
-					<h3>security management</h3>
+					<h3>security<br/>goals?</h3>
 					<ul>
-						<li>security must be &quot;in our nature&quot; as of yesterday</li>
+						<li>security being always<br/>present</li>
+						<li>security measures<br/>should be protecting privacy (GDPR!)</li>
 						<li>establishing standards</li>
 						<li>making security part of the SDLC<sup>*</sup></li>
 					</ul>
-					<div style="font-size:0.5em; text-align: left">
+					<div style="font-size:0.5em; text-align: right">
 						<sup>*</sup>Software Development Lifecycle
 					</div>
 
 					<aside class="notes" data-markdown="">
-						- non functional req - security is part of IT
-						- 
+						- making sure we are safe
+						- we need to proof that we did all things necessary
+						- do the right thing and document it
 					</aside>
 
+				</section>
+
+				<section id="slide-04"
+					data-background-image="images/eat-sleep-code.png" 
+					data-background-size="30%"
+					data-background-position="95% 10%"
+					data-background-opacity="0.4">
+
+					<h3>development<br/>perspective</h3>
+
+					<ul>
+						<li>specified tasks</li>
+						<li>rampup to the know-how</li>
+						<li>making it part of each release</li>
+					</ul>
+
+					<aside class="notes" data-markdown>
+						- how can we know, what to do exactly
+					</aside>
 				</section>
 
 
@@ -157,34 +180,27 @@
 
 			<section>
 
-				<section id="slide-04">
-					<h3>Plenty of possibilities</h3>
 
+				<section id="slide-05"
+					data-background-image="images/owasp-logo-white.png"
+					data-background-size="35%"
+					data-background-position="90% 10%"
+					data-background-opacity="0.4">
+					
+					<h3>we are working on this...</h3>
 					<ul>
-						<li>buying services with lots of human support <span class="fragment hl-red">expensive</span> </li>
-						<li>buying services without human support <span class="fragment hl-orange">less expensive</span></li>
-						<li>doing it on our own <span class="fragment hl-green">&quotonly&quot; developer time</span></li>
+						<li>scanning with OWASPs Zed Attack Proxy (aka ZAP)</li>
+						<li>we want to run it during QA deploy</li>
+						<li>create specific security tasks before each release </li>
 					</ul>
-
-					<aside class="notes" data-markdown>
-						- big expectations
-						- onboarding of development teams
-						- clearing
-					</aside>
-				</section>
-
-				<section id="slide-05" data-markdown="">
-					### What we did
-					- using OWASPs Zed Attack Proxy (aka ZAP &rarr; open source)
-					- creating selenium tests
-					- let it run
 				</section>
 
 				<aside class="notes" data-markdown="">
-					- ZAP is free of Cost
-					- has a rest API to remote control
+					- easy to use (beginner to advanced)
+					- reports help pinpoint neuralgic spots
+					- ZAP is free of Cost (management loves that)
 					- well supported by a community (plugins, ...)
-					- even comes with docker image...
+					- backed up by other measures (static code analysis, code reviews, trainings...)
 				</aside>
 
 				<section id="slide-06">
@@ -206,16 +222,20 @@
 			<script type="module" src="js/svg-animations/src/index.js"></script>
 
 			<section>
-				<section id="slide-07" data-markdown>
-					### show ZAP in docker
+				
+				<section id="slide-08" data-background-image="images/fry-confused.jpg"
+										data-background-position="90% 10%"
+										data-background-size="30%">
+
+					<h1><br/>questions?</h1>
 				</section>
 
-				<section id="slide-08" data-markdown>
-					### questions
-				</section>
-
-				<section class="chapter" id="slide-09" data-markdown>
-					# thank you
+				
+				<section class="chapter" id="slide-09">
+					<h2>
+						<span class="fragment" data-autoslide="1000">thank you</span><br/>
+						<span class="fragment">mulțumesc</span>
+					</h2>
 				</section>
 			</section>
 
@@ -533,9 +553,12 @@
 			},
 			{
 				id: 'show selenium and REST api',
-				elementIds: [seleniumLogo, zapRestImage, svgBrowser, svgServer],
+				elementIds: [svgReport, seleniumLogo, zapRestImage, svgBrowser, svgServer],
 				tasks: [
-					(sel, rest, brs, srv) => {
+					(rep, sel, rest, brs, srv) => {
+						rep.attr({
+							style: 'display:none'
+						});
 						brs.attr({style: ''});
 						srv.attr({style: ''});
 
