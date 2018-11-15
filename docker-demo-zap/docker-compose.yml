@@ -25,6 +25,14 @@ services:
     networks:
       - juice_net
     command: node /tests/juice_test.js
+  selenium-activescan:
+    image: artifactory.bisnode.net/selenium-node
+    container_name: selenium-activescan
+    volumes:
+      - ./selenium-activescan:/tests/
+    networks:
+      - juice_net
+    command: node /tests/juice_test-activescan.js
 networks:
   juice_net:
     driver: bridge
