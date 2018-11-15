@@ -34,7 +34,7 @@ const createDateString = (now) => {
 const now = new Date();
 const datetime = createDateString(now);
 
-console.log("===== starting active scan with ZAP");
+console.log("===== starting selenium active scan with ZAP");
 console.time('activescan');
 
 let progress_scan = 0;
@@ -83,22 +83,8 @@ function browse_shop() {
             } else {
                 console.log('Saved report.');
             }
+            console.timeEnd('activescan')
         }))
-        // .then(() => driver.get('http://' + OWASP_ZAP_HOST + ':' + OWASP_ZAP_PORT + '/OTHER/core/other/jsonreport/?formMethod=GET'))
-        // .then(() => driver.getPageSource())
-        // .then((src) => {
-        //     console.dir('>>>>', src);
-        //     return fs.writeFile(`/tests/report-${datetime}.json`, src, (err) => {
-        //         // src.then(() => driver.findElement(By.id('json')))
-        //         //     .then((elem) => elem.getText())
-        //         if (err) {
-        //             console.log(err)
-        //         } else {
-        //             console.log('Saved report.');
-        //         }
-        //         console.timeEnd('activescan')
-        //     });
-        // })
         .catch((err) => console.log('An error occured: ' + err))
 
 }
