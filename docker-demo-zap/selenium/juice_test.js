@@ -43,13 +43,11 @@ function browse_shop() {
             console.log('Exploring the application...')
         })
         .then(() => driver.sleep(2000))
-        .then(() => driver.findElement(By.id("email")).sendKeys("' UNION SELECT * FROM USERS"))
-        .then(() => driver.findElement(By.id("password")).sendKeys("123"))
+        .then(() => driver.findElement(By.id("email")).sendKeys("admin@juice-sh.op"))
+        .then(() => driver.findElement(By.id("password")).sendKeys("admin123"))
         .then(() => driver.findElement(By.id("loginButton")).click())
-        .then(() => {
-            console.log('Starting active scan')
-            driver.sleep(2000)
-        })
+        .then(() => driver.get('http://' + OWASP_ZAP_HOST + ':' + OWASP_ZAP_PORT + '/OTHER/core/other/htmlreport/?formMethod=GET'))
+        .then(() => driver.getPageSource())
         .then((src) => fs.writeFile(`/tests/report-${datetime}.html`, src, (err) => {
             if (err) {
                 console.log(err)
